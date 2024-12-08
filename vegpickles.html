@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+    
+
+        .details_one {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 80%;
+            margin-top: -3px;
+        }
+
+        .details img {
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            margin-right: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .details-content h2{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 44px;
+            text-shadow: 0px 0px 2px;
+        }
+        .details-content p{
+                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                 font-size: 20px;
+        }
+        .add-to-cart {
+            background-color:aqua;
+            /* width: 100px; */
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 1px;
+        }
+        .buy-now{
+            background-color:lawngreen;
+            width: 100px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 1px;
+        }
+        .navbar-brand {
+        font-size: 35px;
+        margin-left: 25px;
+    }
+
+    .d-flex input {
+        width: 550px;
+        position: relative;
+        left: -280px;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(230, 204, 62);
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* gap: 150px; */
+            row-gap:50px;
+            column-gap: 150px;
+            margin-left: 40px;
+           
+
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height:25em;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+      background-color:brown;
+      color: #fff;
+      padding: 40px 0;
+    }
+    footer .social-icons a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 30px;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #f8b400;
+    }
+    footer .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      transition: color 0.3s;
+    }
+    footer .footer-links a:hover {
+      color: #fff;
+    }
+    .items img{
+       border-radius:10px;
+    }
+       /* Mobile (small screens) */
+       @media (max-width: 576px) {
+      .details_one img{
+                  /* width: 150px !important; */
+      }
+
+
+       }
+
+         /* Tablet (medium screens) */
+    @media (min-width: 577px) and (max-width: 768px) {
+
+    }
+
+       /* Large mobile and small laptops */
+       @media (min-width: 769px) and (max-width: 992px) {
+
+       }
+    
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg"
+    style="background-color:brown; height: 80px; position: sticky; top: 0; z-index: 1050; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+            style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-weight: bold;">𝕾𝖗𝖎𝖓𝖎𝖛𝖆𝖘𝖆
+            𝖋𝖔𝖔𝖉𝖘</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav" style="padding-left: 70px;" >
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link active" aria-current="page" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Home</a>
+                </li> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link" href="#vegmain"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Shop
+                        Now</a>
+                </li>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">About
+                        Us</a>
+                </li>
+                <li class="nav-item" style="padding: 10px; width:50px;">
+                    <a class="nav-link" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;"><i style="font-size:27px; padding-left: 19em;" class="fa-solid fa-cart-shopping" ></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="main">
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">Here Some We provided VEG PICKLES</h1>
+        <div class="card-container">
+            <!-- Mango Pickle -->
+            <div class="card">
+                <img src="https://i0.wp.com/srikrishnamart.com/wp-content/uploads/2022/05/Mango-pickle-Srikrishnamart-e1654895723663.jpg?fit=1080%2C974&ssl=1" alt="Mango Pickle">
+                <h3>Mango Pickle</h3>
+                <p>A tangy and spicy mango pickle, perfect with every meal.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Lemon Pickle -->
+            <div class="card">
+                <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800" alt="Lemon Pickle">
+                <h3>Lemon Pickle</h3>
+                <p>A zesty and spicy lemon pickle to enhance your meals.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Amla Pickle -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.BsvhlFkGkG4I48FXUTfEZwHaHa&pid=Api&P=0&h=180" alt="Amla Pickle">
+                <h3>Amla Pickle</h3>
+                <p>A healthy and flavorful pickle made from fresh amla.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Tomato Pickle -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/tomato-pickle.jpg" style="height: 220px;" alt="Tomato Pickle">
+                <h3>Tomato Pickle</h3>
+                <p>A rich and tangy tomato pickle with a hint of spices.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Tamarind Pickle -->
+            <div class="card">
+                <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+                <h3>Tamarind Pickle</h3>
+                <p>A tangy tamarind pickle packed with authentic flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Kakarkaya Pickle -->
+            <div class="card">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.8VA5q_USpdHNILIE5bso-wHaFj&pid=Api&P=0&h=180" style="height: 250px;" alt="Kakarkaya Pickle">
+                <h3>Kakarkaya Pickle</h3>
+                <p>A unique and bitter-sweet pickle made with kakarkaya.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+    <div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="mango"
+        class="details">
+        <div class="details_one" ">
+            <img src="https://vegecravings.com/wp-content/uploads/2016/12/mango-pickle-recipe-step-by-step-instructions-7.jpg"
+                style="width: 600px;" alt="Mango Pickle">
+                <a href="
+                https://vegecravings.com/wp-content/uploads/2016/12/mango-pickle-recipe-step-by-step-instructions-7.jpg">
+                <img src="https://cdn-icons-png.flaticon.com/512/61/61442.png" style="width:25px; height:20px;" alt=""></a>
+
+            <div class="details-content">
+                <h2>Mango Pickle</h2>
+                <p><strong>Description:</strong> A classic and spicy mango pickle, loved for its tangy flavor.</p>
+                <p><strong>Ingredients:</strong> Raw Mango, Oil, Spices, Garlic, Salt</p>
+                <p><strong>Weight:</strong> 500g</p>
+                <p><strong>Price:</strong> ₹300</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now" onclick="buymangopickle()">Buy Now</button>
+                <p class="back">Back to Menu</p>
+            </div>
+            
+        </div>
+        <section>
+            <h1>You may also like</h1>
+            <div class="card-container">
+                <!-- Mango Pickle -->
+                <div class="card">
+                    <img src="https://i0.wp.com/srikrishnamart.com/wp-content/uploads/2022/05/Mango-pickle-Srikrishnamart-e1654895723663.jpg?fit=1080%2C974&ssl=1" alt="Mango Pickle">
+                    <h3>Mango Pickle</h3>
+                    <p>A tangy and spicy mango pickle, perfect with every meal.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Lemon Pickle -->
+                <div class="card">
+                    <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800" alt="Lemon Pickle">
+                    <h3>Lemon Pickle</h3>
+                    <p>A zesty and spicy lemon pickle to enhance your meals.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Amla Pickle -->
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.BsvhlFkGkG4I48FXUTfEZwHaHa&pid=Api&P=0&h=180" alt="Amla Pickle">
+                    <h3>Amla Pickle</h3>
+                    <p>A healthy and flavorful pickle made from fresh amla.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tomato Pickle -->
+                <div class="card">
+                    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/tomato-pickle.jpg" style="height: 200px;" alt="Tomato Pickle">
+                    <h3>Tomato Pickle</h3>
+                    <p>A rich and tangy tomato pickle with a hint of spices.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tamarind Pickle -->
+                <div class="card">
+                    <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+                    <h3>Tamarind Pickle</h3>
+                    <p>A tangy tamarind pickle packed with authentic flavors.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Kakarkaya Pickle -->
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.8VA5q_USpdHNILIE5bso-wHaFj&pid=Api&P=0&h=180" alt="Kakarkaya Pickle">
+                    <h3>Kakarkaya Pickle</h3>
+                    <p>A unique and bitter-sweet pickle made with kakarkaya.</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+              <div class="row">
+                <!-- Column 1: Food-related links -->
+                <div class="col-md-4">
+                  <h5>Foodie's Corner</h5>
+                  <div class="footer-links">
+                    <a href="/menu">Menu</a>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/recipes">Recipes</a>
+                    <a href="/blog">Food Blog</a>
+                  </div>
+                </div>
+        
+                <!-- Column 2: Social Media Icons -->
+                <div class="col-md-4">
+                  <h5>Follow Us</h5>
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+        
+                <!-- Column 3: Contact Information -->
+                <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <div class="footer-links">
+                    <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                    <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                    <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Footer Bottom -->
+              <div class="text-center mt-4">
+                <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+        </div>
+    
+
+    <div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh; " id="lemon"
+        class="details">
+        <div class="details_one">
+            <a href="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800"><img src="https://cdn-icons-png.flaticon.com/512/61/61442.png" style="width:25px; height:20px;"
+                alt=""></a>
+            <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800"
+                alt="Lemon Pickle">
+            <div class="details-content">
+                <h2>Lemon Pickle</h2>
+                <p><strong>Description:</strong> A tangy and zesty lemon pickle to enhance your meals.</p>
+                <p><strong>Ingredients:</strong> Lemon, Salt, Oil, Spices</p>
+                <p><strong>Weight:</strong> 400g</p>
+                <p><strong>Price:</strong> ₹250</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now" onclick="buylemonpickle()" >Buy Now</button>
+                <p class="back">Back to Menu</p>
+            </div>
+        </div>
+        <section>
+            <h1>You may also like</h1>
+            <div class="card-container">
+                <!-- Mango Pickle -->
+                <div class="card">
+                    <img src="https://i0.wp.com/srikrishnamart.com/wp-content/uploads/2022/05/Mango-pickle-Srikrishnamart-e1654895723663.jpg?fit=1080%2C974&ssl=1" alt="Mango Pickle">
+                    <h3>Mango Pickle</h3>
+                    <p>A tangy and spicy mango pickle, perfect with every meal.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Lemon Pickle -->
+                <div class="card">
+                    <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800" alt="Lemon Pickle">
+                    <h3>Lemon Pickle</h3>
+                    <p>A zesty and spicy lemon pickle to enhance your meals.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Amla Pickle -->
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.BsvhlFkGkG4I48FXUTfEZwHaHa&pid=Api&P=0&h=180" alt="Amla Pickle">
+                    <h3>Amla Pickle</h3>
+                    <p>A healthy and flavorful pickle made from fresh amla.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tomato Pickle -->
+                <div class="card">
+                    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/tomato-pickle.jpg" style="height: 200px;" alt="Tomato Pickle">
+                    <h3>Tomato Pickle</h3>
+                    <p>A rich and tangy tomato pickle with a hint of spices.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tamarind Pickle -->
+                <div class="card">
+                    <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+                    <h3>Tamarind Pickle</h3>
+                    <p>A tangy tamarind pickle packed with authentic flavors.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Kakarkaya Pickle -->
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.8VA5q_USpdHNILIE5bso-wHaFj&pid=Api&P=0&h=180" alt="Kakarkaya Pickle">
+                    <h3>Kakarkaya Pickle</h3>
+                    <p>A unique and bitter-sweet pickle made with kakarkaya.</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+              <div class="row">
+                <!-- Column 1: Food-related links -->
+                <div class="col-md-4">
+                  <h5>Foodie's Corner</h5>
+                  <div class="footer-links">
+                    <a href="/menu">Menu</a>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/recipes">Recipes</a>
+                    <a href="/blog">Food Blog</a>
+                  </div>
+                </div>
+        
+                <!-- Column 2: Social Media Icons -->
+                <div class="col-md-4">
+                  <h5>Follow Us</h5>
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+        
+                <!-- Column 3: Contact Information -->
+                <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <div class="footer-links">
+                    <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                    <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                    <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Footer Bottom -->
+              <div class="text-center mt-4">
+                <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+    </div>
+
+    <div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="amla"
+        class="details">
+        <div class="details_one">
+            <img src="https://media.indiatimes.in/media/content/2015/Nov/pickle_1448438329.jpg" alt="Amla Pickle">
+            <div class="details-content">
+                <h2>Amla Pickle</h2>
+                <p><strong>Description:</strong> A healthy and spicy amla pickle, rich in Vitamin C.</p>
+                <p><strong>Ingredients:</strong> Amla, Oil, Spices, Salt</p>
+                <p><strong>Weight:</strong> 450g</p>
+                <p><strong>Price:</strong> ₹300</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now" onclick="buyamlapickle()">Buy Now</button>
+                <p class="back">Back to Menu</p>
+            </div>
+        </div>
+        <section>
+            <h1>You may also like</h1>
+            <div class="card-container">
+                <!-- Mango Pickle -->
+                <div class="card">
+                    <img src="https://i0.wp.com/srikrishnamart.com/wp-content/uploads/2022/05/Mango-pickle-Srikrishnamart-e1654895723663.jpg?fit=1080%2C974&ssl=1" alt="Mango Pickle">
+                    <h3>Mango Pickle</h3>
+                    <p>A tangy and spicy mango pickle, perfect with every meal.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Lemon Pickle -->
+                <div class="card">
+                    <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800" alt="Lemon Pickle">
+                    <h3>Lemon Pickle</h3>
+                    <p>A zesty and spicy lemon pickle to enhance your meals.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Amla Pickle -->
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.BsvhlFkGkG4I48FXUTfEZwHaHa&pid=Api&P=0&h=180" alt="Amla Pickle">
+                    <h3>Amla Pickle</h3>
+                    <p>A healthy and flavorful pickle made from fresh amla.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tomato Pickle -->
+                <div class="card">
+                    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/tomato-pickle.jpg" style="height: 200px;" alt="Tomato Pickle">
+                    <h3>Tomato Pickle</h3>
+                    <p>A rich and tangy tomato pickle with a hint of spices.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tamarind Pickle -->
+                <div class="card">
+                    <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+                    <h3>Tamarind Pickle</h3>
+                    <p>A tangy tamarind pickle packed with authentic flavors.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Kakarkaya Pickle -->
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.8VA5q_USpdHNILIE5bso-wHaFj&pid=Api&P=0&h=180" alt="Kakarkaya Pickle">
+                    <h3>Kakarkaya Pickle</h3>
+                    <p>A unique and bitter-sweet pickle made with kakarkaya.</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+              <div class="row">
+                <!-- Column 1: Food-related links -->
+                <div class="col-md-4">
+                  <h5>Foodie's Corner</h5>
+                  <div class="footer-links">
+                    <a href="/menu">Menu</a>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/recipes">Recipes</a>
+                    <a href="/blog">Food Blog</a>
+                  </div>
+                </div>
+        
+                <!-- Column 2: Social Media Icons -->
+                <div class="col-md-4">
+                  <h5>Follow Us</h5>
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+        
+                <!-- Column 3: Contact Information -->
+                <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <div class="footer-links">
+                    <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                    <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                    <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Footer Bottom -->
+              <div class="text-center mt-4">
+                <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+    </div>
+    <div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="tomato"
+        class="details">
+        <div class="details_one">
+            <img src="https://recipes.timesofindia.com/photo/52653896.cms?imgsize=126289" alt="Tomato Pickle">
+            <div class="details-content">
+                <h2>Tomato Pickle</h2>
+                <p><strong>Description:</strong> A delicious and tangy tomato pickle, perfect to pair with rice or roti.
+                </p>
+                <p><strong>Ingredients:</strong> Tomato, Oil, Spices, Garlic, Salt</p>
+                <p><strong>Weight:</strong> 500g</p>
+                <p><strong>Price:</strong> ₹280</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now" onclick="buytamatopickle()">Buy Now</button>
+                <p class="back">Back to Menu</p>
+            </div>
+        </div>
+        <section>
+            <h1>You may also like</h1>
+            <div class="card-container">
+                <!-- Mango Pickle -->
+                <div class="card">
+                    <img src="https://i0.wp.com/srikrishnamart.com/wp-content/uploads/2022/05/Mango-pickle-Srikrishnamart-e1654895723663.jpg?fit=1080%2C974&ssl=1" alt="Mango Pickle">
+                    <h3>Mango Pickle</h3>
+                    <p>A tangy and spicy mango pickle, perfect with every meal.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Lemon Pickle -->
+                <div class="card">
+                    <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800" alt="Lemon Pickle">
+                    <h3>Lemon Pickle</h3>
+                    <p>A zesty and spicy lemon pickle to enhance your meals.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Amla Pickle -->
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.BsvhlFkGkG4I48FXUTfEZwHaHa&pid=Api&P=0&h=180" alt="Amla Pickle">
+                    <h3>Amla Pickle</h3>
+                    <p>A healthy and flavorful pickle made from fresh amla.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tomato Pickle -->
+                <div class="card">
+                    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/tomato-pickle.jpg" style="height: 200px;" alt="Tomato Pickle">
+                    <h3>Tomato Pickle</h3>
+                    <p>A rich and tangy tomato pickle with a hint of spices.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tamarind Pickle -->
+                <div class="card">
+                    <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+                    <h3>Tamarind Pickle</h3>
+                    <p>A tangy tamarind pickle packed with authentic flavors.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Kakarkaya Pickle -->
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.8VA5q_USpdHNILIE5bso-wHaFj&pid=Api&P=0&h=180" alt="Kakarkaya Pickle">
+                    <h3>Kakarkaya Pickle</h3>
+                    <p>A unique and bitter-sweet pickle made with kakarkaya.</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+              <div class="row">
+                <!-- Column 1: Food-related links -->
+                <div class="col-md-4">
+                  <h5>Foodie's Corner</h5>
+                  <div class="footer-links">
+                    <a href="/menu">Menu</a>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/recipes">Recipes</a>
+                    <a href="/blog">Food Blog</a>
+                  </div>
+                </div>
+        
+                <!-- Column 2: Social Media Icons -->
+                <div class="col-md-4">
+                  <h5>Follow Us</h5>
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+        
+                <!-- Column 3: Contact Information -->
+                <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <div class="footer-links">
+                    <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                    <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                    <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Footer Bottom -->
+              <div class="text-center mt-4">
+                <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+    </div>
+
+    <div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="tamarind"
+        class="details">
+        <div class="details_one">
+            <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+            <div class="details-content">
+                <h2>Tamarind Pickle</h2>
+                <p><strong>Description:</strong> A tangy and spicy tamarind pickle, a classic favorite.</p>
+                <p><strong>Ingredients:</strong> Tamarind, Oil, Spices, Salt</p>
+                <p><strong>Weight:</strong> 500g</p>
+                <p><strong>Price:</strong> ₹280</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now" onclick="buytamarindpickle()">Buy Now</button>
+                <p class="back">Back to Menu</p>
+            </div>
+        </div>
+        <section>
+            <h1>You may also like</h1>
+            <div class="card-container">
+                <!-- Mango Pickle -->
+                <div class="card">
+                    <img src="https://i0.wp.com/srikrishnamart.com/wp-content/uploads/2022/05/Mango-pickle-Srikrishnamart-e1654895723663.jpg?fit=1080%2C974&ssl=1" alt="Mango Pickle">
+                    <h3>Mango Pickle</h3>
+                    <p>A tangy and spicy mango pickle, perfect with every meal.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Lemon Pickle -->
+                <div class="card">
+                    <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800" alt="Lemon Pickle">
+                    <h3>Lemon Pickle</h3>
+                    <p>A zesty and spicy lemon pickle to enhance your meals.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Amla Pickle -->
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.BsvhlFkGkG4I48FXUTfEZwHaHa&pid=Api&P=0&h=180" alt="Amla Pickle">
+                    <h3>Amla Pickle</h3>
+                    <p>A healthy and flavorful pickle made from fresh amla.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tomato Pickle -->
+                <div class="card">
+                    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/tomato-pickle.jpg" style="height: 200px;" alt="Tomato Pickle">
+                    <h3>Tomato Pickle</h3>
+                    <p>A rich and tangy tomato pickle with a hint of spices.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tamarind Pickle -->
+                <div class="card">
+                    <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+                    <h3>Tamarind Pickle</h3>
+                    <p>A tangy tamarind pickle packed with authentic flavors.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Kakarkaya Pickle -->
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.8VA5q_USpdHNILIE5bso-wHaFj&pid=Api&P=0&h=180" alt="Kakarkaya Pickle">
+                    <h3>Kakarkaya Pickle</h3>
+                    <p>A unique and bitter-sweet pickle made with kakarkaya.</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+              <div class="row">
+                <!-- Column 1: Food-related links -->
+                <div class="col-md-4">
+                  <h5>Foodie's Corner</h5>
+                  <div class="footer-links">
+                    <a href="/menu">Menu</a>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/recipes">Recipes</a>
+                    <a href="/blog">Food Blog</a>
+                  </div>
+                </div>
+        
+                <!-- Column 2: Social Media Icons -->
+                <div class="col-md-4">
+                  <h5>Follow Us</h5>
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+        
+                <!-- Column 3: Contact Information -->
+                <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <div class="footer-links">
+                    <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                    <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                    <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Footer Bottom -->
+              <div class="text-center mt-4">
+                <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+    </div>
+
+    <div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="karkaya"
+        class="details">
+        <div class="details_one">
+            <img src="https://bezawadabites.com/wp-content/uploads/2024/01/YT8lfBlr.jpeg" alt="Karkaya Pickle">
+            <div class="details-content">
+                <h2>Kakarkaya Pickle</h2>
+                <p><strong>Description:</strong> A traditional and spicy bitter gourd pickle, full of flavor.</p>
+                <p><strong>Ingredients:</strong> Bitter Gourd (Karkaya), Oil, Spices, Salt</p>
+                <p><strong>Weight:</strong> 450g</p>
+                <p><strong>Price:</strong> ₹320</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now" onclick="buykakarkayapickle()">Buy Now</button>
+                <p class="back">Back to Menu</p>
+            </div>
+        </div>
+        <section>
+            <h1>You may also like</h1>
+            <div class="card-container">
+                <!-- Mango Pickle -->
+                <div class="card">
+                    <img src="https://i0.wp.com/srikrishnamart.com/wp-content/uploads/2022/05/Mango-pickle-Srikrishnamart-e1654895723663.jpg?fit=1080%2C974&ssl=1" alt="Mango Pickle">
+                    <h3>Mango Pickle</h3>
+                    <p>A tangy and spicy mango pickle, perfect with every meal.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Lemon Pickle -->
+                <div class="card">
+                    <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800" alt="Lemon Pickle">
+                    <h3>Lemon Pickle</h3>
+                    <p>A zesty and spicy lemon pickle to enhance your meals.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Amla Pickle -->
+                <div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.BsvhlFkGkG4I48FXUTfEZwHaHa&pid=Api&P=0&h=180" alt="Amla Pickle">
+                    <h3>Amla Pickle</h3>
+                    <p>A healthy and flavorful pickle made from fresh amla.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tomato Pickle -->
+                <div class="card">
+                    <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/tomato-pickle.jpg" style="height: 200px;" alt="Tomato Pickle">
+                    <h3>Tomato Pickle</h3>
+                    <p>A rich and tangy tomato pickle with a hint of spices.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Tamarind Pickle -->
+                <div class="card">
+                    <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+                    <h3>Tamarind Pickle</h3>
+                    <p>A tangy tamarind pickle packed with authentic flavors.</p>
+                    <button>Shop Now</button>
+                </div>
+    
+                <!-- Kakarkaya Pickle -->
+                <div class="card">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.8VA5q_USpdHNILIE5bso-wHaFj&pid=Api&P=0&h=180" alt="Kakarkaya Pickle">
+                    <h3>Kakarkaya Pickle</h3>
+                    <p>A unique and bitter-sweet pickle made with kakarkaya.</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container" >
+              <div class="row">
+                <!-- Column 1: Food-related links -->
+                <div class="col-md-4">
+                  <h5>Foodie's Corner</h5>
+                  <div class="footer-links">
+                    <a href="/menu">Menu</a>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact Us</a>
+                    <a href="/recipes">Recipes</a>
+                    <a href="/blog">Food Blog</a>
+                  </div>
+                </div>
+        
+                <!-- Column 2: Social Media Icons -->
+                <div class="col-md-4">
+                  <h5>Follow Us</h5>
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+        
+                <!-- Column 3: Contact Information -->
+                <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <div class="footer-links">
+                    <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                    <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                    <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Footer Bottom -->
+              <div class="text-center mt-4">
+                <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+    </div>
+
+
+    <script>
+        let vegmain = document.getElementsByClassName('ach')
+        let vegdis = document.getElementById('main')
+        let vegsub = document.getElementsByClassName("details")
+        let back = document.getElementsByClassName('back')
+        for (let i = 0; i < vegmain.length; i++) {
+            vegmain[i].onclick = function () {
+                vegdis.style.display = 'none'     
+                vegsub[i].style.display = 'block'
+                back[i].onclick = function backToMenu() {
+                    vegdis.style.display = 'block'
+                    vegsub[i].style.display = 'none'
+                }
+            }
+        }
+        
+        function buymangopickle() {
+            const phoneNumber = "9515174064"; // Your WhatsApp number
+            const pricePerKg = 600; 
+
+            const quantity = prompt("Please enter the quantity you want to order (in Kg):", "1");
+
+            if (quantity === null) {
+                alert("Order cancelled.");
+                return; 
+            }
+
+            const parsedQuantity = parseFloat(quantity); 
+            if (isNaN(parsedQuantity) || parsedQuantity <= 0) {
+                alert("Invalid quantity. Please enter a valid number.");
+                return; 
+            }
+
+         
+            const totalPrice = parsedQuantity * pricePerKg;
+
+         
+            const orderId = "CP" + Math.floor(100000 + Math.random() * 900000);
+
+      
+            const message = `Hello,\nI would like to order MANGO PICKLE.\nOrder ID: ${orderId}\nQuantity: ${parsedQuantity} Kg\nTotal Price: Rs. ${totalPrice}\n Please confim my order \n Note: Please do not modify this message.\n Your price is depends on your quantity`;
+
+
+            const encodedMessage = encodeURIComponent(message);
+
+
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+        function buylemonpickle() {
+            const phoneNumber = "9515174064"; 
+            const pricePerKg = 900; 
+
+           
+            const quantity = prompt("Please enter the quantity you want to order (in Kg):", "1");
+
+          
+            if (quantity === null) {
+                alert("Order cancelled.");
+                return; 
+            }
+
+            const parsedQuantity = parseFloat(quantity); 
+            if (isNaN(parsedQuantity) || parsedQuantity <= 0) {
+                alert("Invalid quantity. Please enter a valid number.");
+                return; 
+            }
+
+          
+            const totalPrice = parsedQuantity * pricePerKg;
+
+
+            const orderId = "CP" + Math.floor(100000 + Math.random() * 900000);
+
+           
+            const message = `Hello,\nI would like to order LEMON PICKLE.\nOrder ID: ${orderId}\nQuantity: ${parsedQuantity} Kg\nTotal Price: Rs. ${totalPrice}\n Please confim my order \n Note: Please do not modify this message.\n Your price is depends on your quantity`;
+
+
+            const encodedMessage = encodeURIComponent(message);
+
+        
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+        function buyamlapickle() {
+            const phoneNumber = "9515174064"; 
+            const pricePerKg = 600;
+
+            
+            const quantity = prompt("Please enter the quantity you want to order (in Kg):", "1");
+
+       
+            if (quantity === null) {
+                alert("Order cancelled.");
+                return; 
+            }
+
+            const parsedQuantity = parseFloat(quantity);
+            if (isNaN(parsedQuantity) || parsedQuantity <= 0) {
+                alert("Invalid quantity. Please enter a valid number.");
+                return; 
+            }
+
+         
+            const totalPrice = parsedQuantity * pricePerKg;
+
+     
+            const orderId = "CP" + Math.floor(100000 + Math.random() * 900000);
+
+     
+            const message = `Hello,\nI would like to order AMLA PICKLE.\nOrder ID: ${orderId}\nQuantity: ${parsedQuantity} Kg\nTotal Price: Rs. ${totalPrice}\n Please confim my order \n Note: Please do not modify this message.\n Your price is depends on your quantity`;
+
+
+            const encodedMessage = encodeURIComponent(message);
+
+           
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+        function buytamatopickle() {
+            const phoneNumber = "9515174064"; 
+            const pricePerKg = 900; 
+
+            const quantity = prompt("Please enter the quantity you want to order (in Kg):", "1");
+
+ 
+            if (quantity === null) {
+                alert("Order cancelled.");
+                return;
+            }
+
+            const parsedQuantity = parseFloat(quantity); 
+            if (isNaN(parsedQuantity) || parsedQuantity <= 0) {
+                alert("Invalid quantity. Please enter a valid number.");
+                return; 
+            }
+
+     
+            const totalPrice = parsedQuantity * pricePerKg;
+
+            const orderId = "CP" + Math.floor(100000 + Math.random() * 900000);
+
+
+            const message = `Hello,\nI would like to order TAMATO PICKLE.\nOrder ID: ${orderId}\nQuantity: ${parsedQuantity} Kg\nTotal Price: Rs. ${totalPrice}\n Please confim my order \n Note: Please do not modify this message.\n Your price is depends on your quantity`;
+
+            const encodedMessage = encodeURIComponent(message);
+
+     
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+        function buytamarindpickle() {
+            const phoneNumber = "9515174064"; // Your WhatsApp number
+            const pricePerKg = 600; // Price per Kg
+
+            // Ask the user for quantity via prompt
+            const quantity = prompt("Please enter the quantity you want to order (in Kg):", "1");
+
+            // Validate the quantity input
+            if (quantity === null) {
+                alert("Order cancelled.");
+                return; // Exit if the user cancels the prompt
+            }
+
+            const parsedQuantity = parseFloat(quantity); // Parse the input as a number
+            if (isNaN(parsedQuantity) || parsedQuantity <= 0) {
+                alert("Invalid quantity. Please enter a valid number.");
+                return; // Exit if the input is invalid
+            }
+
+            // Calculate the total price
+            const totalPrice = parsedQuantity * pricePerKg;
+
+            // Generate a unique Order ID
+            const orderId = "CP" + Math.floor(100000 + Math.random() * 900000);
+
+            // Message with Order ID and price
+            const message = `Hello,\nI would like to order TAMARIND PICKLE.\nOrder ID: ${orderId}\nQuantity: ${parsedQuantity} Kg\nTotal Price: Rs. ${totalPrice}\n Please confim my order \n Note: Please do not modify this message.\n Your price is depends on your quantity`;
+
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // Redirect to WhatsApp
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+        function buykakarkayapickle() {
+            const phoneNumber = "9515174064"; // Your WhatsApp number
+            const pricePerKg = 600; // Price per Kg
+
+            // Ask the user for quantity via prompt
+            const quantity = prompt("Please enter the quantity you want to order (in Kg):", "1");
+
+            // Validate the quantity input
+            if (quantity === null) {
+                alert("Order cancelled.");
+                return; // Exit if the user cancels the prompt
+            }
+
+            const parsedQuantity = parseFloat(quantity); // Parse the input as a number
+            if (isNaN(parsedQuantity) || parsedQuantity <= 0) {
+                alert("Invalid quantity. Please enter a valid number.");
+                return; // Exit if the input is invalid
+            }
+
+            // Calculate the total price
+            const totalPrice = parsedQuantity * pricePerKg;
+
+            // Generate a unique Order ID
+            const orderId = "CP" + Math.floor(100000 + Math.random() * 900000);
+
+            // Message with Order ID and price
+            const message = `Hello,\nI would like to order KAKARKAYA PICKLE.\nOrder ID: ${orderId}\nQuantity: ${parsedQuantity} Kg\nTotal Price: Rs. ${totalPrice}\n Please confim my order \n Note: Please do not modify this message.\n Your price is depends on your quantity`;
+
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // Redirect to WhatsApp
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+        
+
+    </script>
+</body>
+
+</html>
